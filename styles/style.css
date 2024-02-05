@@ -1,3 +1,13 @@
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+  
+  --main-font: 'Raleway', sans-serif;
+  --accent-font: 'STIX Two Text', sans-serif;
+
+}
+
 *,
 *::before,
 *::after {
@@ -5,8 +15,17 @@
 }
 
 .page {
+  display: flex;
   min-inline-size: 360px;
+  flex-direction: column;
   margin: 0;
+  background-color: var(--bg-color, #F3EFEC);
+  font-family: var(--main-font, sans-serif);
+  color: var(--text-color,  #312A4E);
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 p,
@@ -19,4 +38,74 @@ ol,
 li,
 figure {
   margin: 0;
+}
+
+.theme_dark {
+
+}
+
+.header {
+  padding-top: 10vi;
+}
+
+.heading {
+  font-family: var(--accent-font, sans-serif);
+
+
+}
+
+.header__title {
+  font-size: clamp(1rem, 0.3333rem + 2.963vw, 3rem);
+}
+
+.content__title {
+  padding-top: 7vi;
+  padding-bottom: 2.4vi;
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 90%;
+
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content-section {
+  padding: 0 5vi;
+}
+
+.content__text-block {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.content__text-block .content__paragraph:not(:last-child) {
+  padding-bottom: 1em;
+}
+
+.content__blockquote {
+  max-width: 75vi;
+  align-self:center;
+  padding-bottom: 1.5em;
+  line-height: 2em;
+  font-style: italic;
+}
+
+.content__text-link {
+  color: inherit;
+}
+
+
+
+.footer {
+
 }
