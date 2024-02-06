@@ -41,15 +41,31 @@ figure {
 }
 
 .theme_dark {
-
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
 }
 
 .header {
   padding-top: 10vi;
+  width: 100%;
+}
+.content {
+  margin-top: -10px;
 }
 
 .heading {
+  /* Карты подскажут */
+  display: flex;
   font-family: var(--accent-font, sans-serif);
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 90%;
+  margin-bottom: 40px;
+
 
 
 }
@@ -57,10 +73,18 @@ figure {
 .header__title {
   font-size: clamp(1rem, 0.3333rem + 2.963vw, 3rem);
 }
+.header__menu {
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 71px;
+}
 
 .content__title {
-  padding-top: 7vi;
-  padding-bottom: 2.4vi;
+  margin-top: 7vi;
+  margin-bottom: 2.4vi;
   font-family: 'STIX Two Text';
   font-style: normal;
   font-weight: 600;
@@ -85,27 +109,270 @@ figure {
 .content__text-block {
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 18px;
+  width: 100%;
+
+/* Творческие кризисы, кажется, рано или поздно испытывает любой человек. Часто бывает так, что вы сталкиваетесь с проблемой, не можете решить её с первого раза и начинаете думать, что вообще ни на что не способны. Мозг запоминает эту модель поведения, и на следующий день вам не хочется делать вообще ничего — ведь всё равно ничего не получится. Как выйти из такого застоя? Есть разные варианты, мы поговорим об одном из самых креативных — колоде карт. */
+
+
+
+
+
+
+
+
+
+
+
+}
+
+.content__paragraph {
+    font-size: 18px;
+
 }
 
 .content__text-block .content__paragraph:not(:last-child) {
-  padding-bottom: 1em;
+  padding-bottom: calc(1.5em - 10px);
 }
 
+.content__text-block.content__text-block_type_first-lettered > .content__paragraph:first-child::first-letter {
+  background-color: var(--accent-color, #FFAB6B);
+  border: 1px solid var(--text-color);
+  padding: 0 4px;
+  margin-right: 1px;
+/* Rectangle 6 */
+  font-size: 27px;
+  font-weight: bold;
+
+
+}
+
+
 .content__blockquote {
-  max-width: 75vi;
-  align-self:center;
-  padding-bottom: 1.5em;
+  max-width: 68vi;
+  align-self: center;
+  margin-bottom: 1.5em;
   line-height: 2em;
   font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+/* or 36px */
+
+
+
 }
 
 .content__text-link {
   color: inherit;
 }
 
+.content__figure {
+  margin: 75px 7% 0 7%;
+  width: calc(100% + 10vi);
+  margin-left: calc(-5vi);
+}
 
+.content__picture {
+  width: 100%;
+}
+
+.content__picture-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 90px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+}
+
+.content__card {
+  display: flex;
+  flex-direction: column;
+  width: 90vi;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vi;
+  border: 1px solid currentColor;
+  aspect-ratio: 4 / 3;
+}
+
+.content__card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+align-self: stretch;
+
+
+font-family: 'STIX Two Text';
+font-style: normal;
+font-weight: 600;
+font-size: 60px;
+line-height: 90%;
+}
+
+.colored-text {
+  position: relative;
+}
+
+.colored-text::after {
+  position: absolute;
+  content: '';
+  display: flex;
+  height: 0.3em;
+  width: 3.5em;
+  margin-top: -0.4em;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+.content__card-subtitle {
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+
+  text-align: center;
+  align-self: stretch;
+
+}
+
+
+
+.content-section {
+
+}
+
+.header__logo {
+/* VЁRSTKA */
+  margin-top: -15px;
+
+
+
+}
+
+.header__theme-toggler {
+  margin-left: auto;
+}
+
+.header__theme-button {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 104%;
+  color: currentColor;
+  font-family: inherit;
+  color: currentColor;
+
+
+
+
+}
+
+.header__theme-button_type_dark {
+  cursor: pointer;
+  /* Тёмная */
+
+
+
+
+
+}
+
+.header__theme-button_type_light {
+  cursor: pointer;
+}
+
+.header__theme-button_is-active {
+  position: relative;
+  cursor: default;
+  pointer-events: none;
+    font-weight: 700;
+  
+
+}
+
+.header__theme-button_is-active::after {
+  position: absolute;
+  content: '';
+  display: flex;
+  height: 0.3em;
+  width: 3.5em;
+  margin-top: -0.4em;
+  font-weight: 700;
+  background-color: var(--accent-color);
+  z-index: -1;
+
+}
+
+.content__list {
+  margin-left: -25px;
+    margin-top: -24px;
+  justify-self: start;
+  list-style: none;
+  margin-bottom: 144px;
+}
+
+.content__list>li{
+
+  margin-bottom: 10px;
+}
+
+.content__list>li::before {
+  content: '';
+  display: inline-block;
+  padding-left: 24px;
+  width: 15px;
+  height: 15px;
+
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-image: url('../images/marker-light.svg');
+}
+
+.header__theme-button_type_dark:focus-visible {
+  outline: currentColor;
+}
+
+.header__theme-button_type_light:focus-visible {
+  outline: currentColor;
+}
+
+.content__text-link:focus-visible {
+  outline: currentColor;
+}
 
 .footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: currentColor;
+
+  padding: 2.5vi;
+  border-top: 1px solid currentColor;
+
+}
+
+.footer__copyright {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: currentColor;
 
 }
